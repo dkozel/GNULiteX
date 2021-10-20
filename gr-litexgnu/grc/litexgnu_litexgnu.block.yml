@@ -1,10 +1,10 @@
 id: litexgnu_litexgnu
-label: litexgnu
-category: '[litexgnu]'
+label: LitePCIe 
+category: '[LiteX]'
 
 templates:
   imports: import litexgnu
-  make: litexgnu.litexgnu()
+  make: litexgnu.litexgnu(${device_index})
 
 #  Make one 'parameters' list entry for every parameter you want settable from the GUI.
 #     Keys include:
@@ -12,6 +12,10 @@ templates:
 #     * label (label shown in the GUI)
 #     * dtype (e.g. int, float, complex, byte, short, xxx_vector, ...)
 parameters:
+- id: device_index
+  label: Device Index
+  dtype: int
+  default: 0
 
 #  Make one 'inputs' list entry per input and one 'outputs' list entry per output.
 #  Keys include:
